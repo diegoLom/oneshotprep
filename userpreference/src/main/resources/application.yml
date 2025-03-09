@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: User Preferences
+  datasource:
+    url: jdbc:mysql://user-preferences.cjqoawoqq6ag.sa-east-1.rds.amazonaws.com:3306/user
+    username: admin
+    password: L0uid!23
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
