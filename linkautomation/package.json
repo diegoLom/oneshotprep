@@ -1,7 +1,15 @@
 {
   "dependencies": {
     "@types/selenium-webdriver": "^4.1.28",
-    "selenium-webdriver": "^4.27.0"
+    "buffer": "^6.0.3",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "net": "^1.0.2",
+    "selenium-webdriver": "^4.29.0",
+    "stream": "^0.0.3",
+    "url": "^0.11.4",
+    "util": "^0.12.5",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",

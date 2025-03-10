@@ -10,13 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const linkedin_extraction_1 = require("./services/linkedin-extraction");
-const browser_utils_1 = require("./utils/browser-utils");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield linkedin_extraction_1.LinkedinExtraction.goToLinkedin().then(() => {
             });
-            console.log(`${browser_utils_1.BrowserUtils.getOptions()}`);
         }
         catch (error) {
             console.error("An error occurred:", error);

@@ -6,7 +6,7 @@ async function main() {
         await LinkedinExtraction.goToLinkedin().then(() => {
             
         });
-        console.log(`${BrowserUtils.getOptions()}`);
+      
     } catch (error) {
         console.error("An error occurred:", error);
     }
