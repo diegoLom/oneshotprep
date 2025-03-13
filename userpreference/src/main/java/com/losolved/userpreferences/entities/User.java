@@ -1,4 +1,4 @@
-package com.losolved.userpreference.entities;
+package com.losolved.userpreferences.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,7 +22,7 @@ public class User {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String name;
 
     @Column(nullable = false)
     private String password;

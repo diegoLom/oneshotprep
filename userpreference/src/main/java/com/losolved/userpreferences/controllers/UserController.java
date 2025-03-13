@@ -1,7 +1,7 @@
-package com.losolved.userpreference.controllers;
+package com.losolved.userpreferences.controllers;
 
-import com.losolved.userpreference.entities.User;
-import com.losolved.userpreference.services.UserService;
+import com.losolved.userpreferences.entities.User;
+import com.losolved.userpreferences.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

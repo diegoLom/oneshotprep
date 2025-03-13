@@ -1,4 +1,4 @@
-package com.losolved.userpreference;
+package com.losolved.userpreferences;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
