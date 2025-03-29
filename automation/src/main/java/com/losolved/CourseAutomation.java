@@ -29,13 +29,13 @@ public class CourseAutomation {
         options.setExperimentalOption("debuggerAddress", "localhost:9222"); // Use the port you specified
 
         TreeSet<String> sections = new TreeSet<>();
-        sections.add("Seção 4: IAM & AWS CLI");
+    /** sections.add("Seção 4: IAM & AWS CLI");
         sections.add("Seção 5: EC2 Fundamentals");
         sections.add("Seção 6: EC2 Instance Storage");
-        sections.add("Seção 7: AWS Fundamentals: ELB + ASG");
+        sections.add("Seção 7: AWS Fundamentals: ELB + ASG");*/
         sections.add("Seção 8: AWS Fundamentals: RDS + Aurora + ElasticCache");
         sections.add("Seção 9: Route 53");
-        sections.add("Seção 10: VPC Fundamentals");
+ /**    sections.add("Seção 10: VPC Fundamentals");
         sections.add("Seção 11: Amazon S3 Introduction");
         sections.add("Seção 12: AWS CLI, SDK, IAM Roles & Policies");
         sections.add("Seção 13: Advanced Amazon S3");
@@ -45,16 +45,16 @@ public class CourseAutomation {
         sections.add("Seção 17: AWS Elastic Beanstalk");
         sections.add("Seção 18: AWS CloudFormation");
         sections.add("Seção 19: AWS Integration & Messaging: SQS, SNS & Kinesis");
-        sections.add("Seção 20: AWS Monitoring & Audit: CloudWatch, X-Ray and CloudTrail");
+        sections.add("Seção 20: AWS Monitoring & Audit: CloudWatch, X-Ray and CloudTrail"); 
         sections.add("Seção 21: AWS Serverless: Lambda");
         sections.add("Seção 22: AWS Serverless: DynamoDB");
         sections.add("Seção 23: AWS Serverless: API Gateway");
-        sections.add("Seção 24: AWS CICD: CodeCommit, CodePipeline, CodeBuild, CodeDeploy");
+        sections.add("Seção 24: AWS CICD: CodeCommit, CodePipeline, CodeBuild, CodeDeploy"); 
         sections.add("Seção 25: AWS Serverless: SAM - Serverless Application Model");
         sections.add("Seção 26: Cloud Development Kit (CDK)");
         sections.add("Seção 27: Cognito: Cognito User Pools, Cognito Identity Pools & Cognito Sync");
         sections.add("Seção 28: Other Serverless: Step Functions & AppSync");
-        sections.add("Seção 29: Advanced Identity");
+        sections.add("Seção 29: Advanced Identity");*/
 
         WebDriver driver = new ChromeDriver(options);
         sections.forEach(section -> {processSection(driver, section);});
@@ -90,6 +90,10 @@ public class CourseAutomation {
                 List<WebElement> quizElements = driver.findElements(By.cssSelector(".quiz-page-content"));
                 if (!quizElements.isEmpty() && quizElements.get(0).isDisplayed()) {
                     continue; // Skip this iteration if it's a quiz
+                }
+                List<WebElement> textElements = driver.findElements(By.cssSelector(".text-viewer--content--JQnss"));
+                if (!textElements.isEmpty() && textElements.get(0).isDisplayed()) {
+                    continue; // Skip this iteration if it's a text element
                 }
 
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -133,6 +137,9 @@ public class CourseAutomation {
 
         } catch (Exception e) {
             e.printStackTrace();
+
+            WebElement sectionElement = driver.findElement(By.xpath("//span[contains(text(), '" + section + "')]"));
+            sectionElement.click();
         }
     }
 }

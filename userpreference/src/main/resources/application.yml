@@ -2,9 +2,9 @@ spring:
   application:
     name: User Preferences
   datasource:
-    url: jdbc:mysql://user-preferences.cjqoawoqq6ag.sa-east-1.rds.amazonaws.com:3306/user
-    username: admin
-    password: L0uid!23
+    url: jdbc:mysql://localhost:3306/user
+    username: userpreferences
+    password: userpassword
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

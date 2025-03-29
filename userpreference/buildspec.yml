@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21 
+    commands:
+      - echo "Install Maven..."
+      - yum install -y maven
+  pre_build:
+    commands:
+      - echo "Cleaning and resolving dependencies..."
+      - mvn clean install -DskipTests
+  build:
+    commands:
+      - echo "Building the application..."
+      - mvn test
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+      - echo "Build completed on `date`" > build.txt
+
+artifacts:
+  files:
+    - build.txt
+    - target/*.jar
+  discard-paths: yes
