@@ -10,6 +10,9 @@ phases:
   pre_build:
     commands:
       - echo "Cleaning and resolving dependencies..."
+      - echo "Current directory: $(pwd)"
+      - cd ..
+      - echo "After performing cd ..: $(pwd)"
       - mvn clean install -DskipTests
   build:
     commands:
