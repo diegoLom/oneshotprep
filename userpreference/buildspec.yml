@@ -18,10 +18,11 @@ phases:
       - mvn clean install -DskipTests  # Run ONCE in the correct directory
   post_build:
     commands:
-      - echo "Build completed on $(date)"  # 🚨 ERROR: Missing closing quote
+      - echo "Build completed on $(date)"
+      - cd ..  # Return to root directory to ensure build.txt is in the right place
       - echo "Build completed on $(date)" > build.txt
 
 artifacts:
   files:
     - build.txt
-    - target/*.jar
+    - userpreference/target/*.jar  # Path to the JAR in the subdirectory
