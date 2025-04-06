@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source : target/*.jar
+    destination: /home/ec2-user/deploy
+hooks:
+  BeforeInstall:
+    - location: prescript.sh
+      timeout:  3000
+      runas: root
+  AfterInstall:
+    - location: postscript.sh 
+      timeout: 3000
+      runas: root

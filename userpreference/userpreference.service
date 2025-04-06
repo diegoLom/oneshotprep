@@ -1,0 +1,12 @@
+[Unit]
+Description=User Service application 
+After=network.target
+
+[Service]
+User=ec2-User
+WorkingDirectoy=/home/ec2-user/deploy
+ExecStart=/usr/bin/java -jar *.jar
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
