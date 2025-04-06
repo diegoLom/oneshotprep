@@ -9,7 +9,6 @@ phases:
       - yum install -y maven
   pre_build:
     commands:
-      - echo "Current directory: $(pwd)"
       - echo "Searching for POM..."
       - find . -name "pom.xml"  # Verify POM location
   build:
