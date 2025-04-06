@@ -3,28 +3,26 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto21 
+      java: corretto21
     commands:
       - echo "Install Maven..."
       - yum install -y maven
   pre_build:
     commands:
-      - echo "Cleaning and resolving dependencies..."
       - echo "Current directory: $(pwd)"
-      - cd ..
-      - echo "After performing cd ..: $(pwd)"
-      - mvn clean install -DskipTests
+      - echo "Searching for POM..."
+      - find . -name "pom.xml"  # Verify POM location
   build:
     commands:
       - echo "Building the application..."
-      - mvn test
+      - mvn clean install -DskipTests  # Run ONCE in the correct directory
   post_build:
     commands:
-      - echo "Build completed on `date`"
-      - echo "Build completed on `date`" > build.txt
+      - echo "Build completed on $(date)"
+      - echo "Build completed on $(date)" > build.txt
 
 artifacts:
   files:
     - build.txt
     - target/*.jar
-  discard-paths: yes
+  # Remove discard-paths unless you're flattening artifacts intentionally
