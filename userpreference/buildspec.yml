@@ -17,6 +17,7 @@ phases:
       - cd userpreference/
       - mv appspec.yml ../
       - mvn clean install -DskipTests  # Run ONCE in the correct directory
+      - mv userpreference/target/*.jar userpreference/target/userpreference.jar
   post_build:
     commands:
       - echo "Build completed on $(date)"
@@ -29,4 +30,4 @@ artifacts:
     - appspec.yml
     - userpreference/prescript.sh
     - userpreference/postscript.sh
-    - userpreference/target/*.jar  # Path to the JAR in the subdirectory
+    - userpreference/target/userpreference.jar  # Path to the JAR in the subdirectory
