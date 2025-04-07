@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source : userpreference/target/*.jar
-  - destination: /home/ec2-user/deploy
+  - source: userpreference/target/userpreference.jar  # Use the new name
+    destination: /home/ec2-user/deploy
 hooks:
   BeforeInstall:
     - location: userpreference/prescript.sh
