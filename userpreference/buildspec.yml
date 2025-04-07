@@ -28,5 +28,6 @@ artifacts:
     - build.txt
     - appspec.yml
     - userpreference/prescript.sh
+    - userpreference/userpreference.service
     - userpreference/postscript.sh
     - userpreference/target/userpreference.jar  # Path to the JAR in the subdirectory
