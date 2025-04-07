@@ -15,7 +15,7 @@ phases:
     commands:
       - echo "Building the application..."
       - cd userpreference/
-      - mv appspec.yml ./
+      - mv appspec.yml ../
       - mvn clean install -DskipTests  # Run ONCE in the correct directory
   post_build:
     commands:
