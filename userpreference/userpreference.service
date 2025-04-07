@@ -1,11 +1,13 @@
+# File: userpreference/userpreference.service
 [Unit]
-Description=User Service application 
-After=network.target
+Description=UserPreference Java Service
+After=syslog.target network.target
 
 [Service]
-User=ec2-User
-WorkingDirectoy=/home/ec2-user/deploy
-ExecStart=/usr/bin/java -jar *.jar
+User=ec2-user
+WorkingDirectory=/home/ec2-user/deploy
+ExecStart=/usr/bin/java -jar /home/ec2-user/deploy/userpreference.jar
+SuccessExitStatus=143
 Restart=always
 
 [Install]
