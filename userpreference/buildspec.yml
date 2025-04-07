@@ -25,7 +25,7 @@ phases:
 artifacts:
   files:
     - build.txt
-    - appspec.yml
-    - prescript.sh
-    - postscript.sh
+    - userpreference/appspec.yml
+    - userpreference/prescript.sh
+    - userpreference/postscript.sh
     - userpreference/target/*.jar  # Path to the JAR in the subdirectory
