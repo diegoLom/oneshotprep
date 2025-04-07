@@ -15,6 +15,7 @@ phases:
     commands:
       - echo "Building the application..."
       - cd userpreference/
+      - mv appspec.yml ./
       - mvn clean install -DskipTests  # Run ONCE in the correct directory
   post_build:
     commands:
@@ -25,7 +26,7 @@ phases:
 artifacts:
   files:
     - build.txt
-    - userpreference/appspec.yml
+    - appspec.yml
     - userpreference/prescript.sh
     - userpreference/postscript.sh
     - userpreference/target/*.jar  # Path to the JAR in the subdirectory
