@@ -3,6 +3,8 @@ os: linux
 files:
   - source: userpreference/target/userpreference.jar  # Use the new name
     destination: /home/ec2-user/deploy
+  - source: userpreference/userpreference.service  # Add this
+    destination: /etc/systemd/system/
 hooks:
   BeforeInstall:
     - location: userpreference/prescript.sh
